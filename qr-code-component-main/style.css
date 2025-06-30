@@ -1,0 +1,110 @@
+body {
+background-color: hsl(212, 45%, 89%);
+background-image: repeating-linear-gradient(
+to right,
+rgba(255,255,255,0.04) 0 1px,
+transparent 1px 80px
+);
+min-height: 100vh;
+margin: 0;
+font-family: 'Outfit', Arial, sans-serif;
+
+}
+
+.center-container {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.visually-hidden {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0,0,0,0);
+border: 0;
+}
+
+.qr-section {
+background: #fff;
+border-radius: 20px;
+box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+padding: 1rem 1rem 2rem 1rem;
+max-width: 320px;
+text-align: center;
+margin-bottom: 2rem;
+display: flex;
+}
+
+.qr-bg {
+background: linear-gradient(135deg, hsl(220, 100%, 70%) 0%, hsl(220, 100%, 60%) 100%);
+border-radius: 12px;
+padding: 1.2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 1.5rem;
+}
+
+#qrcode > img, #qrcode > canvas {
+border-radius: 8px;
+width: 18rem !important;
+height: 18rem !important;
+display: block;
+margin: 0;
+}
+
+.qr-title {
+font-size: 1.25rem;
+font-weight: 700;
+color: hsl(218, 44%, 22%);
+margin: 0 0 1rem 0;
+}
+
+.qr-desc {
+font-size: 1rem;
+color: hsl(220, 15%, 55%);
+margin: 0;
+font-weight: 400;
+line-height: 1.4;
+}
+
+figure {
+margin: 0;
+}
+
+figcaption {
+margin-top: 1rem;
+font-size: 1rem;
+color: #333;
+max-width: 18rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+figcaption > h2, p {
+max-width: 16rem;
+}
+
+footer.attribution {
+text-align: center;
+font-size: 0.9rem;
+color: hsl(220, 15%, 55%);
+margin-top: 1rem;
+width: 100%;
+position: fixed;
+left: 0;
+bottom: 0;
+background: transparent;
+padding-bottom: 1rem;
+}
+
+/* Remove flex from footer if present */
+footer {
+display: block;
+}
