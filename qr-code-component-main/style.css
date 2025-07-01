@@ -48,9 +48,8 @@ width: clamp(0.04rem, 0.05vw, 0.07rem);
 .qr-section {
 background-color: var(--clr-white);
 border-radius: clamp(0.8rem, 2vw, 1.25rem);
-box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.08);
-padding-block: clamp(1.2rem, 4vw, 2rem);
-padding-inline: clamp(1rem, 3vw, 1.5rem);
+box-shadow: 0 0.25rem 1rem var(--clr-black);
+padding: 1.5rem 1.2rem 2rem 1.2rem;
 max-inline-size: clamp(16rem, 55vw, 20rem);
 text-align: center;
 margin-block-end: clamp(1rem, 3vw, 2rem);
@@ -82,14 +81,13 @@ display: block;
 font-size: clamp(1.1rem, 2vw, 1.25rem);
 font-weight: 700;
 color: var(--clr-slate-900);
-margin-block-end: clamp(0.7rem, 2vw, 1rem);
-margin-block-start: 0;
+margin: 0 0 1rem 0;
 }
 
 .qr-desc {
 font-size: clamp(0.95rem, 1.2vw, 1rem);
 color: var(--clr-slate-500);
-margin: 0 auto;
+margin: 0;
 font-weight: 400;
 line-height: 1.4;
 max-inline-size: clamp(12rem, 40vw, 16rem);
