@@ -1,110 +1,129 @@
-body {
-background-color: hsl(212, 45%, 89%);
-background-image: repeating-linear-gradient(
-to right,
-rgba(255,255,255,0.04) 0 1px,
-transparent 1px 80px
-);
-min-height: 100vh;
-margin: 0;
-font-family: 'Outfit', Arial, sans-serif;
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-slate-300: hsl(212, 45%, 89%);
+  --clr-slate-500: hsl(216, 15%, 48%);
+  --clr-slate-900: hsl(218, 44%, 22%);
+  --clr-black: hsl(0, 0%, 0%);
+}
 
+body {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--clr-slate-500);
+  background-color: var(--clr-slate-300);
+  min-block-size: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--clr-slate-900);
 }
 
 .center-container {
-min-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
+  min-block-size: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: min(100%, 22rem);
+  padding: clamp(1rem, 4vw, 2rem);
 }
 
 .visually-hidden {
-position: absolute;
-width: 1px;
-height: 1px;
-padding: 0;
-margin: -1px;
-overflow: hidden;
-clip: rect(0,0,0,0);
-border: 0;
+  position: absolute;
+  padding: 0;
+  margin: -1rem;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+  height: 0.063rem;
+  width: 0.063rem;
 }
 
 .qr-section {
-background: #fff;
-border-radius: 20px;
-box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-padding: 1rem 1rem 2rem 1rem;
-max-width: 320px;
-text-align: center;
-margin-bottom: 2rem;
-display: flex;
+  background-color: var(--clr-white);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.08);
+  padding-block: 2rem;
+  padding-inline: 1.5rem;
+  max-inline-size: 20rem;
+  text-align: center;
+  margin-block-end: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .qr-bg {
-background: linear-gradient(135deg, hsl(220, 100%, 70%) 0%, hsl(220, 100%, 60%) 100%);
-border-radius: 12px;
-padding: 1.2rem;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 1.5rem;
+  background: var(--clr-slate-300);
 }
 
-#qrcode > img, #qrcode > canvas {
-border-radius: 8px;
-width: 18rem !important;
-height: 18rem !important;
-display: block;
-margin: 0;
+.qrcode-img {
+  border-radius: 0.5rem;
+  inline-size: 100%;
+  max-inline-size: 18rem;
+  aspect-ratio: 1 / 1;
+  display: block;
 }
 
 .qr-title {
-font-size: 1.25rem;
-font-weight: 700;
-color: hsl(218, 44%, 22%);
-margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-slate-900);
+  margin-block-end: 1rem;
+  margin-block-start: 0;
 }
 
 .qr-desc {
-font-size: 1rem;
-color: hsl(220, 15%, 55%);
-margin: 0;
-font-weight: 400;
-line-height: 1.4;
+  font-size: 1rem;
+  color: var(--clr-slate-500);
+  margin: 0 auto;
+  font-weight: 400;
+  line-height: 1.4;
+  max-inline-size: 16rem;
 }
 
 figure {
-margin: 0;
+  margin: 0;
 }
 
 figcaption {
-margin-top: 1rem;
-font-size: 1rem;
-color: #333;
-max-width: 18rem;
-display: flex;
-flex-direction: column;
-align-items: center;
+  margin-block-start: 1rem;
+  font-size: 1rem;
+  color: var(--clr-black);
+  max-inline-size: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-figcaption > h2, p {
-max-width: 16rem;
+:focus-visible {
+  outline: 0.125rem solid var(--clr-slate-900);
+  outline-offset: 0.125rem;
 }
 
-footer.attribution {
-text-align: center;
-font-size: 0.9rem;
-color: hsl(220, 15%, 55%);
-margin-top: 1rem;
-width: 100%;
-position: fixed;
-left: 0;
-bottom: 0;
-background: transparent;
-padding-bottom: 1rem;
-}
-
-/* Remove flex from footer if present */
-footer {
-display: block;
+@media (max-width: 23.438rem) {
+  .center-container {
+    padding: 1rem 0.5rem;
+  }
+  .qr-section {
+    padding-block: 1rem;
+    padding-inline: 0.5rem;
+    max-inline-size: 100vw;
+  }
+  .qr-title, .qr-desc {
+    font-size: 1rem;
+  }
 }
